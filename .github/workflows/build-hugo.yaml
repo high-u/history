@@ -19,6 +19,8 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         working-directory: ./
         run: |
+          git config --local user.email "zen.crazyd@gmail.com"
+          git config --local user.name "high-u"
           git add .
           git commit -m "Publish" -a
           git push origin main
