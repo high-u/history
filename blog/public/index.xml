@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>history</title>
-    <link>http://example.org/</link>
+    <link>https://history-bqtn.onrender.com/</link>
     <description>Recent content on history</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Mar 2021 19:04:16 +0900</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Mar 2021 19:04:16 +0900</lastBuildDate><atom:link href="https://history-bqtn.onrender.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello World</title>
-      <link>http://example.org/posts/hello-world/</link>
+      <link>https://history-bqtn.onrender.com/posts/hello-world/</link>
       <pubDate>Sat, 20 Mar 2021 19:04:16 +0900</pubDate>
       
-      <guid>http://example.org/posts/hello-world/</guid>
+      <guid>https://history-bqtn.onrender.com/posts/hello-world/</guid>
       <description>Hello World このブログを作った時のメモ  xxx  </description>
     </item>
     
