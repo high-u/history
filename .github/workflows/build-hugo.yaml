@@ -5,7 +5,12 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: Check out code
-      uses: actions/checkout@master
-    - name: Build Hugo
-      uses: lowply/build-hugo@v0.79.0
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: install-homebrew
+        run: sudo apt-get install build-essential curl file git
+      - name: install-hugo
+        run: brew install hugo
+      - name: build
+        working-directory: ./blog
+        run: hugo
