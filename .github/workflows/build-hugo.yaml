@@ -26,8 +26,6 @@ jobs:
       - name: Build site
         working-directory: ./blog
         run: |
-          pwd
-          ls -la
           rm -fr public
           hugo
           ls -la public
@@ -36,10 +34,9 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         working-directory: ./
         run: |
-          pwd
-          ls -la
           git config --local user.email "zen.crazyd@gmail.com"
           git config --local user.name "high-u"
           git add .
           git commit -m "Publish" -a
           git push origin main
+
