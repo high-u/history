@@ -7,10 +7,18 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: install-homebrew
+      - name: Install homebrew
         run: sudo apt-get install build-essential curl file git
-      - name: install-hugo
+      - name: Install hugo
         run: brew install hugo
-      - name: build
+      - name: Build site
         working-directory: ./blog
         run: hugo
+      - name: Git push
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        working-directory: ./
+        run: |
+          git add .
+          git commit -m "Publish" -a
+          git push origin main
