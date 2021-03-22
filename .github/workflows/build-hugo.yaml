@@ -10,8 +10,14 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
+        with:
+          path: main
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: publish
       - name: Install hugo
         run: |
           sudo apt update -y
