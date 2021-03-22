@@ -10,10 +10,10 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          path: publish
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#        with:
+#          path: publish
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -29,8 +29,8 @@ jobs:
         run: |
           git config --local user.email "zen.crazyd@gmail.com"
           git config --local user.name "high-u"
-          git branch -a
-          git switch publish
+#          git branch -a
+#          git switch publish
       - name: Git submodule update
         run: git submodule update --init --recursive
       - name: Build site
