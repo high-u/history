@@ -1,5 +1,10 @@
 name: Build Hugo
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "blog/content/**"
 jobs:
   build:
     name: Build
@@ -7,22 +12,20 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: Install homebrew
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y build-essential curl file git
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-          test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-          test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-          test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-          echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
-          brew --version
-      - name: Git submodule update
-        run: git submodule update --init --recursive
       - name: Install hugo
         run: |
-          brew install hugo
+          sudo apt update -y
+          sudo apt install -y curl
+          curl -LO https://github.com/gohugoio/hugo/releases/download/v0.82.0/hugo_0.82.0_Linux-64bit.deb
+          dpkg -i hugo_0.82.0_Linux-64bit.deb
           hugo version
+      - name: Git settings
+        run: |
+          git config --local user.email "zen.crazyd@gmail.com"
+          git config --local user.name "high-u"
+          git switch publish
+      - name: Git submodule update
+        run: git submodule update --init --recursive
       - name: Build site
         working-directory: ./blog
         run: |
@@ -34,9 +37,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         working-directory: ./
         run: |
-          git config --local user.email "zen.crazyd@gmail.com"
-          git config --local user.name "high-u"
-          git add .
+          git add ./blog/public/
           git commit -m "Publish" -a
-          git push origin main
+          git push origin publish
 
