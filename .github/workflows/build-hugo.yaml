@@ -16,8 +16,6 @@ jobs:
 #          path: publish
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          path: main
       - name: Install hugo
         run: |
           sudo apt update -y
