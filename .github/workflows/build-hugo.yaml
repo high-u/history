@@ -10,10 +10,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-#      - name: Checkout
-#        uses: actions/checkout@v2
-#        with:
-#          path: publish
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install hugo
@@ -27,8 +23,6 @@ jobs:
         run: |
           git config --local user.email "zen.crazyd@gmail.com"
           git config --local user.name "high-u"
-#          git branch -a
-#          git switch publish
       - name: Git submodule update
         run: git submodule update --init --recursive
       - name: Build site
@@ -44,5 +38,5 @@ jobs:
         run: |
           git add ./blog/public/
           git commit -m "Publish" -a
-          git push origin publish
+          git push origin main
 
