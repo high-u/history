@@ -132,6 +132,32 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://history-bqtn.onrender.com/posts/2021-03-23-postgrest/" class="color-inherit dim link">
+            PostgREST 弄ってみた
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          PostgREST 弄ってみた 起動と停止 docker-compose up -d docker-compose down --volumes --remove-orphans ファイル ./.env
+POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres POSTGRES_DB=postgres DB_ANON_ROLE=anon #DB_ANON_ROLE=postgres DB_SCHEMA=public docker-compose.yaml
+version: &#34;3&#34; services: postgres: container_name: postgres user: &#34;root:root&#34; image: postgres:11-alpine ports: - &#34;5432:5432&#34; environment: - POSTGRES_USER=${POSTGRES_USER} - POSTGRES_PASSWORD=${POSTGRES_PASSWORD} - POSTGRES_DB=${POSTGRES_DB} - DB_ANON_ROLE=${DB_ANON_ROLE} - DB_SCHEMA=${DB_SCHEMA} volumes: - ./initdb:/docker-entrypoint-initdb.d networks: - postgrest-backend restart: always postgrest: container_name: postgrest image: postgrest/postgrest:latest ports: - &#34;3000:3000&#34; environment: - PGRST_DB_URI=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB} - PGRST_DB_SCHEMA=${DB_SCHEMA} - PGRST_DB_ANON_ROLE=${DB_ANON_ROLE} networks: - postgrest-backend restart: always networks: postgrest-backend: driver: bridge .
+        </div>
+          <a href="https://history-bqtn.onrender.com/posts/2021-03-23-postgrest/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://history-bqtn.onrender.com/posts/hello-world/" class="color-inherit dim link">
             Hello World
             </a>

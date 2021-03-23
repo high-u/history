@@ -6,7 +6,18 @@
     <description>Recent content on history</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Mar 2021 19:04:16 +0900</lastBuildDate><atom:link href="https://history-bqtn.onrender.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Mar 2021 00:49:00 +0900</lastBuildDate><atom:link href="https://history-bqtn.onrender.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PostgREST 弄ってみた</title>
+      <link>https://history-bqtn.onrender.com/posts/2021-03-23-postgrest/</link>
+      <pubDate>Wed, 24 Mar 2021 00:49:00 +0900</pubDate>
+      
+      <guid>https://history-bqtn.onrender.com/posts/2021-03-23-postgrest/</guid>
+      <description>PostgREST 弄ってみた 起動と停止 docker-compose up -d docker-compose down --volumes --remove-orphans ファイル ./.env
+POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres POSTGRES_DB=postgres DB_ANON_ROLE=anon #DB_ANON_ROLE=postgres DB_SCHEMA=public docker-compose.yaml
+version: &amp;#34;3&amp;#34; services: postgres: container_name: postgres user: &amp;#34;root:root&amp;#34; image: postgres:11-alpine ports: - &amp;#34;5432:5432&amp;#34; environment: - POSTGRES_USER=${POSTGRES_USER} - POSTGRES_PASSWORD=${POSTGRES_PASSWORD} - POSTGRES_DB=${POSTGRES_DB} - DB_ANON_ROLE=${DB_ANON_ROLE} - DB_SCHEMA=${DB_SCHEMA} volumes: - ./initdb:/docker-entrypoint-initdb.d networks: - postgrest-backend restart: always postgrest: container_name: postgrest image: postgrest/postgrest:latest ports: - &amp;#34;3000:3000&amp;#34; environment: - PGRST_DB_URI=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB} - PGRST_DB_SCHEMA=${DB_SCHEMA} - PGRST_DB_ANON_ROLE=${DB_ANON_ROLE} networks: - postgrest-backend restart: always networks: postgrest-backend: driver: bridge .</description>
+    </item>
+    
     <item>
       <title>Hello World</title>
       <link>https://history-bqtn.onrender.com/posts/hello-world/</link>
