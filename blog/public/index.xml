@@ -16,7 +16,7 @@
       <description>公式ドキュメント見て Mac にインストール ここ 見て、Mac 上で実行したがダメだった。
 しかし、スクリプトで作成された docker-compose.yml を up したら動いた（とりあえず立ち上がったまでの確認だけど）。 ポートだけ書き換えた。
 docker-compose.yml の一部抜粋
-version: &amp;#34;3.7&amp;#34; services: nginx: image: index.docker.io/appsmith/appsmith-editor env_file: ./docker.env ports: - - &amp;#34;080:80&amp;#34; + - &amp;#34;8080:80&amp;#34; - - &amp;#34;443:443&amp;#34; + - &amp;#34;8443:443&amp;#34;  volumes: - ./data/nginx/app.conf.template:/nginx.conf.template - ./data/certbot/conf:/etc/letsencrypt - ./data/certbot/www:/var/www/certbot command: &amp;#34;/bin/sh -c &amp;#39;while :; do sleep 6h &amp;amp; wait $${!}; nginx -s reload; done &amp;amp; /start-nginx.sh&amp;#39;&amp;#34; depends_on: - appsmith-internal-server labels: com.centurylinklabs.watchtower.enable: &amp;#34;true&amp;#34; networks: - appsmith 動いた時の構成 .</description>
+version: &amp;#34;3.7&amp;#34; services: nginx: image: index.docker.io/appsmith/appsmith-editor env_file: ./docker.env ports: - - &amp;#34;080:80&amp;#34; + - &amp;#34;8080:80&amp;#34; - - &amp;#34;443:443&amp;#34; + - &amp;#34;8443:443&amp;#34;  volumes: - ./data/nginx/app.conf.template:/nginx.conf.template - ./data/certbot/conf:/etc/letsencrypt - ./data/certbot/www:/var/www/certbot command: &amp;#34;/bin/sh -c &amp;#39;while :; do sleep 6h &amp;amp; wait $${!}; nginx -s reload; done &amp;amp; /start-nginx.sh&amp;#39;&amp;#34; depends_on: - appsmith-internal-server labels: com.centurylinklabs.watchtower.enable: &amp;#34;true&amp;#34; networks: - appsmith 動いた時の構成  data/  mongo/  init.</description>
     </item>
     
     <item>

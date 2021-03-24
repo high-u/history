@@ -9,7 +9,7 @@
     <meta name="description" content="公式ドキュメント見て Mac にインストール ここ 見て、Mac 上で実行したがダメだった。
 しかし、スクリプトで作成された docker-compose.yml を up したら動いた（とりあえず立ち上がったまでの確認だけど）。 ポートだけ書き換えた。
 docker-compose.yml の一部抜粋
-version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith-editor env_file: ./docker.env ports: - - &#34;080:80&#34; &#43; - &#34;8080:80&#34; - - &#34;443:443&#34; &#43; - &#34;8443:443&#34;  volumes: - ./data/nginx/app.conf.template:/nginx.conf.template - ./data/certbot/conf:/etc/letsencrypt - ./data/certbot/www:/var/www/certbot command: &#34;/bin/sh -c &#39;while :; do sleep 6h &amp; wait $${!}; nginx -s reload; done &amp; /start-nginx.sh&#39;&#34; depends_on: - appsmith-internal-server labels: com.centurylinklabs.watchtower.enable: &#34;true&#34; networks: - appsmith 動いた時の構成 .">
+version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith-editor env_file: ./docker.env ports: - - &#34;080:80&#34; &#43; - &#34;8080:80&#34; - - &#34;443:443&#34; &#43; - &#34;8443:443&#34;  volumes: - ./data/nginx/app.conf.template:/nginx.conf.template - ./data/certbot/conf:/etc/letsencrypt - ./data/certbot/www:/var/www/certbot command: &#34;/bin/sh -c &#39;while :; do sleep 6h &amp; wait $${!}; nginx -s reload; done &amp; /start-nginx.sh&#39;&#34; depends_on: - appsmith-internal-server labels: com.centurylinklabs.watchtower.enable: &#34;true&#34; networks: - appsmith 動いた時の構成  data/  mongo/  init.">
     <meta name="generator" content="Hugo 0.82.0" />
     
     
@@ -37,7 +37,7 @@ version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith
 <meta property="og:description" content="公式ドキュメント見て Mac にインストール ここ 見て、Mac 上で実行したがダメだった。
 しかし、スクリプトで作成された docker-compose.yml を up したら動いた（とりあえず立ち上がったまでの確認だけど）。 ポートだけ書き換えた。
 docker-compose.yml の一部抜粋
-version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith-editor env_file: ./docker.env ports: - - &#34;080:80&#34; &#43; - &#34;8080:80&#34; - - &#34;443:443&#34; &#43; - &#34;8443:443&#34;  volumes: - ./data/nginx/app.conf.template:/nginx.conf.template - ./data/certbot/conf:/etc/letsencrypt - ./data/certbot/www:/var/www/certbot command: &#34;/bin/sh -c &#39;while :; do sleep 6h &amp; wait $${!}; nginx -s reload; done &amp; /start-nginx.sh&#39;&#34; depends_on: - appsmith-internal-server labels: com.centurylinklabs.watchtower.enable: &#34;true&#34; networks: - appsmith 動いた時の構成 ." />
+version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith-editor env_file: ./docker.env ports: - - &#34;080:80&#34; &#43; - &#34;8080:80&#34; - - &#34;443:443&#34; &#43; - &#34;8443:443&#34;  volumes: - ./data/nginx/app.conf.template:/nginx.conf.template - ./data/certbot/conf:/etc/letsencrypt - ./data/certbot/www:/var/www/certbot command: &#34;/bin/sh -c &#39;while :; do sleep 6h &amp; wait $${!}; nginx -s reload; done &amp; /start-nginx.sh&#39;&#34; depends_on: - appsmith-internal-server labels: com.centurylinklabs.watchtower.enable: &#34;true&#34; networks: - appsmith 動いた時の構成  data/  mongo/  init." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://history-bqtn.onrender.com/posts/2021-03-24-appsmith/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-03-24T09:42:00&#43;09:00" />
@@ -47,7 +47,7 @@ version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith
 <meta itemprop="description" content="公式ドキュメント見て Mac にインストール ここ 見て、Mac 上で実行したがダメだった。
 しかし、スクリプトで作成された docker-compose.yml を up したら動いた（とりあえず立ち上がったまでの確認だけど）。 ポートだけ書き換えた。
 docker-compose.yml の一部抜粋
-version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith-editor env_file: ./docker.env ports: - - &#34;080:80&#34; &#43; - &#34;8080:80&#34; - - &#34;443:443&#34; &#43; - &#34;8443:443&#34;  volumes: - ./data/nginx/app.conf.template:/nginx.conf.template - ./data/certbot/conf:/etc/letsencrypt - ./data/certbot/www:/var/www/certbot command: &#34;/bin/sh -c &#39;while :; do sleep 6h &amp; wait $${!}; nginx -s reload; done &amp; /start-nginx.sh&#39;&#34; depends_on: - appsmith-internal-server labels: com.centurylinklabs.watchtower.enable: &#34;true&#34; networks: - appsmith 動いた時の構成 ."><meta itemprop="datePublished" content="2021-03-24T09:42:00&#43;09:00" />
+version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith-editor env_file: ./docker.env ports: - - &#34;080:80&#34; &#43; - &#34;8080:80&#34; - - &#34;443:443&#34; &#43; - &#34;8443:443&#34;  volumes: - ./data/nginx/app.conf.template:/nginx.conf.template - ./data/certbot/conf:/etc/letsencrypt - ./data/certbot/www:/var/www/certbot command: &#34;/bin/sh -c &#39;while :; do sleep 6h &amp; wait $${!}; nginx -s reload; done &amp; /start-nginx.sh&#39;&#34; depends_on: - appsmith-internal-server labels: com.centurylinklabs.watchtower.enable: &#34;true&#34; networks: - appsmith 動いた時の構成  data/  mongo/  init."><meta itemprop="datePublished" content="2021-03-24T09:42:00&#43;09:00" />
 <meta itemprop="dateModified" content="2021-03-24T09:42:00&#43;09:00" />
 <meta itemprop="wordCount" content="90">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
@@ -55,7 +55,7 @@ version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith
 <meta name="twitter:description" content="公式ドキュメント見て Mac にインストール ここ 見て、Mac 上で実行したがダメだった。
 しかし、スクリプトで作成された docker-compose.yml を up したら動いた（とりあえず立ち上がったまでの確認だけど）。 ポートだけ書き換えた。
 docker-compose.yml の一部抜粋
-version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith-editor env_file: ./docker.env ports: - - &#34;080:80&#34; &#43; - &#34;8080:80&#34; - - &#34;443:443&#34; &#43; - &#34;8443:443&#34;  volumes: - ./data/nginx/app.conf.template:/nginx.conf.template - ./data/certbot/conf:/etc/letsencrypt - ./data/certbot/www:/var/www/certbot command: &#34;/bin/sh -c &#39;while :; do sleep 6h &amp; wait $${!}; nginx -s reload; done &amp; /start-nginx.sh&#39;&#34; depends_on: - appsmith-internal-server labels: com.centurylinklabs.watchtower.enable: &#34;true&#34; networks: - appsmith 動いた時の構成 ."/>
+version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith-editor env_file: ./docker.env ports: - - &#34;080:80&#34; &#43; - &#34;8080:80&#34; - - &#34;443:443&#34; &#43; - &#34;8443:443&#34;  volumes: - ./data/nginx/app.conf.template:/nginx.conf.template - ./data/certbot/conf:/etc/letsencrypt - ./data/certbot/www:/var/www/certbot command: &#34;/bin/sh -c &#39;while :; do sleep 6h &amp; wait $${!}; nginx -s reload; done &amp; /start-nginx.sh&#39;&#34; depends_on: - appsmith-internal-server labels: com.centurylinklabs.watchtower.enable: &#34;true&#34; networks: - appsmith 動いた時の構成  data/  mongo/  init."/>
 
 	
   </head>
@@ -179,14 +179,25 @@ version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith
       networks:
         - appsmith
 </code></pre></div><h2 id="動いた時の構成">動いた時の構成</h2>
-<p>./data<br>
-    /mongo<br>
-        /<a href="/2021-03-24-appsmith/data/mongo/init.js">init.js</a><br>
-    /nginx<br>
-        /<a href="/2021-03-24-appsmith/data/nginx/app.conf.template">app.conf.template</a><br>
-./<a href="/2021-03-24-appsmith/docker-compose.yml">docker-compose.yml</a><br>
-./<a href="/2021-03-24-appsmith/docker.env">docker.env</a><br>
-./<a href="/2021-03-24-appsmith/encryption.env">encryption.env</a></p>
+<ul>
+<li>data/
+<ul>
+<li>mongo/
+<ul>
+<li><a href="/2021-03-24-appsmith/data/mongo/init.js">init.js</a></li>
+</ul>
+</li>
+<li>nginx/
+<ul>
+<li><a href="/2021-03-24-appsmith/data/nginx/app.conf.template">app.conf.template</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/2021-03-24-appsmith/docker-compose.yml">docker-compose.yml</a></li>
+<li><a href="/2021-03-24-appsmith/docker.env">docker.env</a></li>
+<li><a href="/2021-03-24-appsmith/encryption.env">encryption.env</a></li>
+</ul>
 <p>環境残しておいた動くかな？</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/high-u/history.git blog/static/2021-03-24-appsmith
 docker-compose up -d

@@ -113,7 +113,7 @@
       公式ドキュメント見て Mac にインストール ここ 見て、Mac 上で実行したがダメだった。
 しかし、スクリプトで作成された docker-compose.yml を up したら動いた（とりあえず立ち上がったまでの確認だけど）。 ポートだけ書き換えた。
 docker-compose.yml の一部抜粋
-version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith-editor env_file: ./docker.env ports: - - &#34;080:80&#34; + - &#34;8080:80&#34; - - &#34;443:443&#34; + - &#34;8443:443&#34;  volumes: - ./data/nginx/app.conf.template:/nginx.conf.template - ./data/certbot/conf:/etc/letsencrypt - ./data/certbot/www:/var/www/certbot command: &#34;/bin/sh -c &#39;while :; do sleep 6h &amp; wait $${!}; nginx -s reload; done &amp; /start-nginx.sh&#39;&#34; depends_on: - appsmith-internal-server labels: com.centurylinklabs.watchtower.enable: &#34;true&#34; networks: - appsmith 動いた時の構成 .
+version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith-editor env_file: ./docker.env ports: - - &#34;080:80&#34; + - &#34;8080:80&#34; - - &#34;443:443&#34; + - &#34;8443:443&#34;  volumes: - ./data/nginx/app.conf.template:/nginx.conf.template - ./data/certbot/conf:/etc/letsencrypt - ./data/certbot/www:/var/www/certbot command: &#34;/bin/sh -c &#39;while :; do sleep 6h &amp; wait $${!}; nginx -s reload; done &amp; /start-nginx.sh&#39;&#34; depends_on: - appsmith-internal-server labels: com.centurylinklabs.watchtower.enable: &#34;true&#34; networks: - appsmith 動いた時の構成  data/  mongo/  init.
     </div>
   </div>
 </div>
