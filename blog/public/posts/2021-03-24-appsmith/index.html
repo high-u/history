@@ -179,7 +179,7 @@ version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith
       networks:
         - appsmith
 </code></pre></div><h2 id="動いた時の構成">動いた時の構成</h2>
-<pre><code>.
+<p>.
 ├── data
 │   ├── mongo
 │   │   └── init.js
@@ -187,8 +187,8 @@ version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith
 │       └── app.conf.template
 ├── docker-compose.yml
 ├── docker.env
-└── encryption.env
-</code></pre><p>環境残しておいた動くかな？</p>
+└── encryption.env</p>
+<p>環境残しておいた動くかな？</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/high-u/history.git blog/static/2021-03-24-appsmith
 docker-compose up -d
 <span style="color:#75715e"># docker-compose down --volumes --remove-orphans</span>
