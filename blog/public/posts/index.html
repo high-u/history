@@ -105,7 +105,26 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="https://history.high-u.cf/posts/2021-03-29-graphql-with-nodejs/" class="link black dim">
+      <a href="https://history.high-u.cf/posts/2021-03-29-graphql-server-for-nodejs-with-dataloader/" class="link black dim">
+        GraphQL Server に Dataloader をいれてみた
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Dataloader 導入前との比較 Node.js (express 使用) で GraphQL Server を書いてみた | history をベースに Dataloader を導入した。
+データの持ち方を、tag に配列を使った形から、通常の RDBMS でありそうな感じに変更した。
+四苦八苦したが、 Building a GraphQL API in JavaScript | Heroku がすごく参考になった。
+構築する node -v # v14.16.0 echo &#34;{}&#34; &gt; package.json npm i express express-graphql @graphql-tools/schema dataloader ./server.js
+&#34;use strict&#34; const express = require(&#34;express&#34;) const { graphqlHTTP } = require(&#34;express-graphql&#34;) const { makeExecutableSchema } = require(&#34;@graphql-tools/schema&#34;) const DataLoader = require(&#39;dataloader&#39;) const postTable = [ { id: &#34;p1&#34;, title: &#34;Getting started with Node.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://history.high-u.cf/posts/2021-03-28-graphql-for-nodejs/" class="link black dim">
         Node.js (express 使用) で GraphQL Server を書いてみた
       </a>
     </h1>

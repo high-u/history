@@ -132,7 +132,35 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://history.high-u.cf/posts/2021-03-29-graphql-with-nodejs/" class="color-inherit dim link">
+          <a href="https://history.high-u.cf/posts/2021-03-29-graphql-server-for-nodejs-with-dataloader/" class="color-inherit dim link">
+            GraphQL Server に Dataloader をいれてみた
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Dataloader 導入前との比較 Node.js (express 使用) で GraphQL Server を書いてみた | history をベースに Dataloader を導入した。
+データの持ち方を、tag に配列を使った形から、通常の RDBMS でありそうな感じに変更した。
+四苦八苦したが、 Building a GraphQL API in JavaScript | Heroku がすごく参考になった。
+構築する node -v # v14.16.0 echo &#34;{}&#34; &gt; package.json npm i express express-graphql @graphql-tools/schema dataloader ./server.js
+&#34;use strict&#34; const express = require(&#34;express&#34;) const { graphqlHTTP } = require(&#34;express-graphql&#34;) const { makeExecutableSchema } = require(&#34;@graphql-tools/schema&#34;) const DataLoader = require(&#39;dataloader&#39;) const postTable = [ { id: &#34;p1&#34;, title: &#34;Getting started with Node.
+        </div>
+          <a href="https://history.high-u.cf/posts/2021-03-29-graphql-server-for-nodejs-with-dataloader/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://history.high-u.cf/posts/2021-03-28-graphql-for-nodejs/" class="color-inherit dim link">
             Node.js (express 使用) で GraphQL Server を書いてみた
             </a>
         </h1>
@@ -140,7 +168,7 @@
           構築する node -v # v14.16.0 echo &#34;{}&#34; &gt; package.json npm i express express-graphql @graphql-tools/schema ./server.js
 &#34;use strict&#34; const express = require(&#34;express&#34;) const { graphqlHTTP } = require(&#34;express-graphql&#34;) const { makeExecutableSchema } = require(&#34;@graphql-tools/schema&#34;) const posts = [ { id: &#34;p1&#34;, title: &#34;Getting started with Node.js&#34;, author: &#34;Smith&#34;, tags: [&#34;t1&#34;] }, { id: &#34;p2&#34;, title: &#34;Getting started with GraphQL&#34;, author: &#34;Smith&#34;, tags: [&#34;t1&#34;, &#34;t2&#34;] }, { id: &#34;p3&#34;, title: &#34;Getting started with GraphQL Client&#34;, author: &#34;Joe&#34;, tags: [&#34;t1&#34;, &#34;t2&#34;, &#34;t3&#34;] } ] const tags = [ { id: &#34;t1&#34;, name: &#34;nodejs&#34; }, { id: &#34;t2&#34;, name: &#34;graphql&#34; }, { id: &#34;t3&#34;, name: &#34;react&#34; } ] const schema = makeExecutableSchema({ typeDefs: /* GraphQL */ ` type Post { id: ID title: String author: String tags: [Tag] } type Tag { id: ID name: String } type Query { posts(author: String): [Post] } `, resolvers: { Query: { posts: (_, args) =&gt; { console.
         </div>
-          <a href="https://history.high-u.cf/posts/2021-03-29-graphql-with-nodejs/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="https://history.high-u.cf/posts/2021-03-28-graphql-for-nodejs/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -176,38 +204,18 @@ version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://history.high-u.cf/posts/2021-03-23-postgrest/" class="color-inherit dim link">
-            PostgREST 弄ってみた
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          PostgREST 弄ってみた 起動と停止 docker-compose up -d docker-compose down --volumes --remove-orphans ファイル ./.env
-POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres POSTGRES_DB=postgres DB_ANON_ROLE=anon #DB_ANON_ROLE=postgres DB_SCHEMA=public docker-compose.yaml
-version: &#34;3&#34; services: postgres: container_name: postgres user: &#34;root:root&#34; image: postgres:11-alpine ports: - &#34;5432:5432&#34; environment: - POSTGRES_USER=${POSTGRES_USER} - POSTGRES_PASSWORD=${POSTGRES_PASSWORD} - POSTGRES_DB=${POSTGRES_DB} - DB_ANON_ROLE=${DB_ANON_ROLE} - DB_SCHEMA=${DB_SCHEMA} volumes: - ./initdb:/docker-entrypoint-initdb.d networks: - postgrest-backend restart: always postgrest: container_name: postgrest image: postgrest/postgrest:latest ports: - &#34;3000:3000&#34; environment: - PGRST_DB_URI=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB} - PGRST_DB_SCHEMA=${DB_SCHEMA} - PGRST_DB_ANON_ROLE=${DB_ANON_ROLE} networks: - postgrest-backend restart: always networks: postgrest-backend: driver: bridge .
-        </div>
-          <a href="https://history.high-u.cf/posts/2021-03-23-postgrest/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://history.high-u.cf/posts/2021-03-23-postgrest/" class="link black dim">
+              PostgREST 弄ってみた
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://history.high-u.cf/posts/hello-world/" class="link black dim">
