@@ -48,8 +48,8 @@ const postTable = [
   }
 ]
 
-// タグマスターではなくなる
-// 言うなれば、post と tag のジャンクションテーブルと tag マスタを join したデータかな？
+// Dataloader 導入以前は tag マスター的な雰囲気のデータ構造にしていたが
+// 導入に際して、post と tag のジャンクションテーブルと tag マスタを join したようなデータ構造かな？
 const tagTable = [
   {
     id: "t1",
@@ -88,7 +88,7 @@ const tagTable = [
   }
 ]
 
-// 仮想 DB の tag テーブルの select クエリ
+// 仮想 DB の tag テーブルの select クエリのようなもの
 // `select * from tag where postid in (?, ?, ?);`
 const selectFromTagWherePostIdIn = (postIds) => {
   return tagTable.filter(tag => postIds.includes(tag.postId))
