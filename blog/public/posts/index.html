@@ -105,6 +105,22 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="https://history.high-u.cf/posts/2021-03-29-graphql-with-nodejs/" class="link black dim">
+        Node.js (express 使用) で GraphQL Server を書いてみた
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      構築する node -v # v14.16.0 echo &#34;{}&#34; &gt; package.json npm i express express-graphql @graphql-tools/schema ./server.js
+&#34;use strict&#34; const express = require(&#34;express&#34;) const { graphqlHTTP } = require(&#34;express-graphql&#34;) const { makeExecutableSchema } = require(&#34;@graphql-tools/schema&#34;) const posts = [ { id: &#34;p1&#34;, title: &#34;Getting started with Node.js&#34;, author: &#34;Smith&#34;, tags: [&#34;t1&#34;] }, { id: &#34;p2&#34;, title: &#34;Getting started with GraphQL&#34;, author: &#34;Smith&#34;, tags: [&#34;t1&#34;, &#34;t2&#34;] }, { id: &#34;p3&#34;, title: &#34;Getting started with GraphQL Client&#34;, author: &#34;Joe&#34;, tags: [&#34;t1&#34;, &#34;t2&#34;, &#34;t3&#34;] } ] const tags = [ { id: &#34;t1&#34;, name: &#34;nodejs&#34; }, { id: &#34;t2&#34;, name: &#34;graphql&#34; }, { id: &#34;t3&#34;, name: &#34;react&#34; } ] const schema = makeExecutableSchema({ typeDefs: /* GraphQL */ ` type Post { id: ID title: String author: String tags: [Tag] } type Tag { id: ID name: String } type Query { posts(author: String): [Post] } `, resolvers: { Query: { posts: (_, args) =&gt; { console.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="https://history.high-u.cf/posts/2021-03-24-appsmith/" class="link black dim">
         Appsmith 起動した
       </a>
