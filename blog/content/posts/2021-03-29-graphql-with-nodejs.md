@@ -7,6 +7,9 @@ draft: false
 ## 構築する
 
 ```bash
+node -v
+# v14.16.0
+
 echo "{}" > package.json
 npm i express express-graphql @graphql-tools/schema
 ```
