@@ -105,6 +105,22 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="https://history.high-u.cf/posts/2021-03-30-change-graphql-server-data-source/" class="link black dim">
+        GraphQL Server のデータソースを配列からデータベースに変更しただけ
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      構築する node -v # v14.16.0 echo &#34;{}&#34; &gt; package.json npm i express express-graphql @graphql-tools/schema better-sqlite3 ./server.js
+&#34;use strict&#34; const express = require(&#34;express&#34;) const { graphqlHTTP } = require(&#34;express-graphql&#34;) const { makeExecutableSchema } = require(&#34;@graphql-tools/schema&#34;) const DataLoader = require(&#34;dataloader&#34;) const db = require(&#34;better-sqlite3&#34;)(&#34;foobar.db&#34;); (() =&gt; { db.exec(&#34;drop table if exists post&#34;) db.exec(` create table if not exists post ( id text primary key, title text, author text ) `) db.exec(&#34;drop table if exists tag&#34;) db.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="https://history.high-u.cf/posts/2021-03-29-graphql-server-for-nodejs-with-dataloader/" class="link black dim">
         GraphQL Server に Dataloader をいれてみた
       </a>

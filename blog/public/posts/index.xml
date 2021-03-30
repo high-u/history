@@ -6,7 +6,17 @@
     <description>Recent content in Posts on history</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Mar 2021 19:54:00 +0900</lastBuildDate><atom:link href="https://history.high-u.cf/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Mar 2021 20:16:00 +0900</lastBuildDate><atom:link href="https://history.high-u.cf/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GraphQL Server のデータソースを配列からデータベースに変更しただけ</title>
+      <link>https://history.high-u.cf/posts/2021-03-30-change-graphql-server-data-source/</link>
+      <pubDate>Tue, 30 Mar 2021 20:16:00 +0900</pubDate>
+      
+      <guid>https://history.high-u.cf/posts/2021-03-30-change-graphql-server-data-source/</guid>
+      <description>構築する node -v # v14.16.0 echo &amp;#34;{}&amp;#34; &amp;gt; package.json npm i express express-graphql @graphql-tools/schema better-sqlite3 ./server.js
+&amp;#34;use strict&amp;#34; const express = require(&amp;#34;express&amp;#34;) const { graphqlHTTP } = require(&amp;#34;express-graphql&amp;#34;) const { makeExecutableSchema } = require(&amp;#34;@graphql-tools/schema&amp;#34;) const DataLoader = require(&amp;#34;dataloader&amp;#34;) const db = require(&amp;#34;better-sqlite3&amp;#34;)(&amp;#34;foobar.db&amp;#34;); (() =&amp;gt; { db.exec(&amp;#34;drop table if exists post&amp;#34;) db.exec(` create table if not exists post ( id text primary key, title text, author text ) `) db.exec(&amp;#34;drop table if exists tag&amp;#34;) db.</description>
+    </item>
+    
     <item>
       <title>GraphQL Server に Dataloader をいれてみた</title>
       <link>https://history.high-u.cf/posts/2021-03-29-graphql-server-for-nodejs-with-dataloader/</link>

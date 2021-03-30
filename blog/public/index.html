@@ -132,6 +132,31 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://history.high-u.cf/posts/2021-03-30-change-graphql-server-data-source/" class="color-inherit dim link">
+            GraphQL Server のデータソースを配列からデータベースに変更しただけ
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          構築する node -v # v14.16.0 echo &#34;{}&#34; &gt; package.json npm i express express-graphql @graphql-tools/schema better-sqlite3 ./server.js
+&#34;use strict&#34; const express = require(&#34;express&#34;) const { graphqlHTTP } = require(&#34;express-graphql&#34;) const { makeExecutableSchema } = require(&#34;@graphql-tools/schema&#34;) const DataLoader = require(&#34;dataloader&#34;) const db = require(&#34;better-sqlite3&#34;)(&#34;foobar.db&#34;); (() =&gt; { db.exec(&#34;drop table if exists post&#34;) db.exec(` create table if not exists post ( id text primary key, title text, author text ) `) db.exec(&#34;drop table if exists tag&#34;) db.
+        </div>
+          <a href="https://history.high-u.cf/posts/2021-03-30-change-graphql-server-data-source/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://history.high-u.cf/posts/2021-03-29-graphql-server-for-nodejs-with-dataloader/" class="color-inherit dim link">
             GraphQL Server に Dataloader をいれてみた
             </a>
@@ -177,39 +202,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://history.high-u.cf/posts/2021-03-24-appsmith/" class="color-inherit dim link">
-            Appsmith 起動した
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          公式ドキュメント見て Mac にインストール ここ 見て、Mac 上で実行したがダメだった。
-しかし、スクリプトで作成された docker-compose.yml を up したら動いた（とりあえず立ち上がったまでの確認だけど）。 ポートだけ書き換えた。
-docker-compose.yml の一部抜粋
-version: &#34;3.7&#34; services: nginx: image: index.docker.io/appsmith/appsmith-editor env_file: ./docker.env ports: - - &#34;080:80&#34; + - &#34;8080:80&#34; - - &#34;443:443&#34; + - &#34;8443:443&#34;  volumes: - ./data/nginx/app.conf.template:/nginx.conf.template - ./data/certbot/conf:/etc/letsencrypt - ./data/certbot/www:/var/www/certbot command: &#34;/bin/sh -c &#39;while :; do sleep 6h &amp; wait $${!}; nginx -s reload; done &amp; /start-nginx.sh&#39;&#34; depends_on: - appsmith-internal-server labels: com.centurylinklabs.watchtower.enable: &#34;true&#34; networks: - appsmith docker-compose で動いた時の構成 docker-compose.
-        </div>
-          <a href="https://history.high-u.cf/posts/2021-03-24-appsmith/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://history.high-u.cf/posts/2021-03-24-appsmith/" class="link black dim">
+              Appsmith 起動した
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://history.high-u.cf/posts/2021-03-23-postgrest/" class="link black dim">
