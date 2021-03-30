@@ -1,5 +1,5 @@
 ---
-title: "Node.js (express 使用) で GraphQL Server を書いてみた"
+title: "GraphQL Server のデータソースを配列からデータベースに変更しただけ"
 date: 2021-03-30T20:16:00+09:00
 draft: false
 ---
