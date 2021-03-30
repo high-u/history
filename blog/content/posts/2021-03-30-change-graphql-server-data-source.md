@@ -221,4 +221,7 @@ Variables
 
 ## 所感
 
-前回となんら変わりは無いのだけどね。少し実際のサーバに近づけてみた。そして、今後やりたいことへの第一歩。
+前回となんら変わりは無いのだけどね。少し実際のサーバに近づけてみた。そして、今後やりたいことへの第一歩。  
+やりたいことは、 [hasura](https://hasura.io/) のようなものを作る場合の検証というか、どんな考慮が必要なのかを、体感したい。  
+ここ [Modelling many-to-many table relationships | Hasura GraphQL Docs](https://hasura.io/docs/latest/graphql/core/guides/data-modelling/many-to-many.html) に、課題になりそうなことの hasura の考えが載っていた。すごく参考になる。  
+現状の考えでいけば、まずは view での対応を考えてみる。 hasura の推奨では無い方だけど。
