@@ -105,6 +105,27 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="https://history.high-u.cf/posts/2021-04-22-k3s/" class="link black dim">
+        気軽に動かせる kubernetes のディストリビューションを漁った
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      気軽に動かせる kubernetes のディストリビューションを漁った まずは候補  KinD microk8s k0s k3s  雑感 KinD ちょくちょくいじっているけど、手軽で良い。
+（と思っていたのだが、それが今日までになるとは、、）
+microk8s いろいろ便利機能ついているけど、クラスター起動までにすごく時間かかるイメージがつきまとう。
+k0s EC2 を Amazon Linux 2 の t3.medium で立ち上げて、その中で下記コマンド。
+（instance type は適当&hellip;）
+curl -sSLf https://get.k0s.sh | sudo sh sudo cp /usr/local/bin/k0s /usr/bin/ sudo k0s install controller --single sudo systemctl start k0scontroller sudo systemctl enable k0scontroller sudo systemctl status k0scontroller sudo k0s kubectl get pod -A なかなか快適に立ち上がった。
+次に Mac の Docker で。docker-compose.yaml はコレ k0s/k0s-in-docker.md at main · k0sproject/k0s 。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="https://history.high-u.cf/posts/2021-03-30-change-graphql-server-data-source/" class="link black dim">
         GraphQL Server のデータソースを配列からデータベースに変更しただけ
       </a>

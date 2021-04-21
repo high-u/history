@@ -6,7 +6,22 @@
     <description>Recent content in Posts on history</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Mar 2021 20:16:00 +0900</lastBuildDate><atom:link href="https://history.high-u.cf/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Apr 2021 03:00:00 +0900</lastBuildDate><atom:link href="https://history.high-u.cf/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>気軽に動かせる kubernetes のディストリビューションを漁った</title>
+      <link>https://history.high-u.cf/posts/2021-04-22-k3s/</link>
+      <pubDate>Thu, 22 Apr 2021 03:00:00 +0900</pubDate>
+      
+      <guid>https://history.high-u.cf/posts/2021-04-22-k3s/</guid>
+      <description>気軽に動かせる kubernetes のディストリビューションを漁った まずは候補  KinD microk8s k0s k3s  雑感 KinD ちょくちょくいじっているけど、手軽で良い。
+（と思っていたのだが、それが今日までになるとは、、）
+microk8s いろいろ便利機能ついているけど、クラスター起動までにすごく時間かかるイメージがつきまとう。
+k0s EC2 を Amazon Linux 2 の t3.medium で立ち上げて、その中で下記コマンド。
+（instance type は適当&amp;hellip;）
+curl -sSLf https://get.k0s.sh | sudo sh sudo cp /usr/local/bin/k0s /usr/bin/ sudo k0s install controller --single sudo systemctl start k0scontroller sudo systemctl enable k0scontroller sudo systemctl status k0scontroller sudo k0s kubectl get pod -A なかなか快適に立ち上がった。
+次に Mac の Docker で。docker-compose.yaml はコレ k0s/k0s-in-docker.md at main · k0sproject/k0s 。</description>
+    </item>
+    
     <item>
       <title>GraphQL Server のデータソースを配列からデータベースに変更しただけ</title>
       <link>https://history.high-u.cf/posts/2021-03-30-change-graphql-server-data-source/</link>
